@@ -1,0 +1,1 @@
+É possível acessar o projeto através do link : https://vladimirsjr.github.io/languageLibrary/. Entretanto, até o momento, ainda falta desenvolver a conexão com o Banco de Dados para armazenar as informações.
