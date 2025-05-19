@@ -1,27 +1,28 @@
-import sqlite3 from 'sqlite3';
-import { open } from 'sqlite';
+import express from 'express'
+import { openDb } from './src/configDB.js'
+import { createTable, insertPalavra, selectPalavra, selectPalavras, updatePalavra, deletePalavra } from './src/controller/palavras.js'
+import router from './src/routes.js'
+import fs from 'fs'
+import https from 'https'
+import cors from 'cors'
+import path from 'path'
 
-if(typeof window !== "undefined"){
-    window.addEventListener('load', carregado);
+const app = express()
+app.use(express.json())
+app.use(router);
+app.use(cors())
+createTable()
 
-    function carregado(){
+app.set('view engine', 'ejs')
+app.use(express.static('public'))
+app.use(express.urlencoded({ extended: true }))
 
-        async function criarEPopularTabelaPalavraSignificado(palavra, significado) {
-            const db = await open({
-                filename: './banco.db',
-                driver: sqlite3.Database
-            });
+const PORT = 3000
+app.listen(PORT, () => {
+    console.log(`Servidor rodando na porta ${PORT}`)
+})
 
-            db.run('CREATE TABLE IF NOT EXISTS palavras (id INTEGER PRIMARY KEY, palavra TEXT, significado TEXT)');
-    
-            document.getElementById('salvar').addEventListener('click', salvar);
-            const palavraCriar = document.getElementById('criarpalavra').value;
-            const significadoCriar = document.getElementById('criarsignificado').value;
-
-            function salvar(){
-                db.run("INSERT INTO palavras (palavra, significado) VALEUS (?, ?)", [palavraCriar, significadoCriar]);
-            };
-        };
-        criarEPopularTabelaPalavraSignificado();
-    };
-};
+https.createServer({
+    cert: fs.readFileSync('src/SSL/code.crt'),
+    key: fs.readFileSync('src/SSL/code.key')
+}, app).listen(3001, ()=> console.log("Rodando em https"))

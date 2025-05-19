@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/LanguageLibrary.css">
+    <script src="/script/LanguageLibrary.js"></script>
+    <script src="/script/GET-palavras.js"></script>
+    <title>Language Library</title>
+</head>
+<body>
+    <div class="criCon">
+        <div class="criar"><button onclick="toggleCriar(event)" id="buttoncriar" aria-haspopup="true" aria-controls="menu" aria-expanded="false"><img src="plus.svg" alt="criar"></button></div>
+        <div class="consultar"><button id="buttonconsultar" onclick="toggleConsultar(event)" id="buttonconsultar" aria-haspopup="true" aria-controls="menu" aria-expanded="false"><img src="search.svg" alt="consultar"></button></div>
+    </div>
+    <form id="criarPalavra" action="/palavra" method="post">
+        <div class="card">
+            <div id="titulocriar"><h2>Criar Palavra</h2></div>
+            <div class="label-float">
+                <input type="text" id="criarpalavra" type="text" name="criarpalavra" placeholder="Palavra" required>
+                <label for="criarpalavra"></label>
+            </div>
+            <div class="label-float">
+                <input type="text" id="criarsignificado" type="text" name="criarsignificado" placeholder="Significado" required>
+                <label for="criarsignificado"></label>
+            </div>
+            <div>
+                <button class="justify-center" type="submit" value="Enviar" id="salvar">Criar</button>
+            </div>
+        </div>
+    </form>
+    <form id="consultarPalavra" action="/palavra" method="get">
+        <div class="card">
+            <div id="tituloconcultar"><h2>Consultar Palavra</h2></div>
+            <div class="label-float">
+                <input type="text" id="consultarpalavra" name="consultarpalavra" placeholder="palavra">
+                <label for="consultarpalavra"></label>
+            </div>
+            <div id="resultBusca">
+                
+            </div>
+            <div>
+                <button class="justify-center" type="button" id="selectPalavra">Consultar</button>
+            </div>
+        </div>
+    </form>
+    <form id="editarPalavra" action="/palavra">
+        <div class="card">
+            <div id="tituloeditar"><h2>Editar Palavra</h2></div>
+            <div class="label-float">
+                <input type="text" id="editarpalavra" placeholder="Palavra" required>
+                <label for="editarpalavra"></label>
+            </div>
+            <div class="label-float">
+                <input type="text" id="editarsignificado" placeholder="Significado" required>
+                <label for="editarsignificado"></label>
+            </div>
+            <div>
+                <button class="justify-center" type="submit" id="editar">Editar</button>
+            </div>
+        </div>
+    </form>
+    <form id="excluirPalavra" action="/palavra">
+        <div class="card">
+            <div id="tituloexcluir"><h2>Excluir Palavra</h2></div>
+            <div class="label-float">
+                <input type="text" id="excluirpalavra" placeholder="Palavra">
+                <label for="excluirpalavra"></label>
+            </div>
+            <div class="label-float">
+                <input type="text" id="excluirsignificado" placeholder="Significado">
+                <label for="excluirsignificado"></label>
+            </div>
+            <div>
+                <button class="justify-center" type="button" id="excluir">Excluir</button>
+            </div>
+        </div>
+    </form>
+    <div class="titulo">
+        <h1>Language Library</h1>
+    </div>
+    <div class="home">
+        <div class="palavras">
+            <div class="palSig" id="card">
+                
+            </div>
+        </div>
+    </div>
+    <footer>
+        <span>Criado por <a href="#">Vladimir</a> | Todos os direitos reservados 2025</span>
+    </footer>
+    <script src="/script/POST-palavra.js"></script>
+</body>
+</html>
