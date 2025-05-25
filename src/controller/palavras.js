@@ -34,7 +34,7 @@ export async function selectPalavras(req,res) {
 }
 
 export async function selectPalavra(req,res) {
-    let palavraBuscar = req.body
+    let palavraBuscar = req.params.palavra
     openDb().then(db=>{
         db.get('SELECT * FROM palavras WHERE palavra=?', [palavraBuscar])
         .then(palavra=>res.json(palavra))
@@ -42,9 +42,9 @@ export async function selectPalavra(req,res) {
 }
 
 export async function deletePalavra(req,res) {
-    let id = req.body.id
+    let palavraExcluir = req.params.palavra
     openDb().then(db=>{
-        db.get('DELETE FROM palavras WHERE id=?', [id])
+        db.get('DELETE FROM palavras WHERE palavra=?', [palavraExcluir])
         .then(palavra=>res.json(palavra))
     })
     res.json({

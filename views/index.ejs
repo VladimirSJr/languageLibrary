@@ -30,7 +30,7 @@
             </div>
         </div>
     </form>
-    <form id="consultarPalavra" action="/palavra" method="get">
+    <form id="consultarPalavra" action="/palavra/:palavra" method="get">
         <div class="card">
             <div id="tituloconcultar"><h2>Consultar Palavra</h2></div>
             <div class="label-float">
@@ -49,6 +49,10 @@
         <div class="card">
             <div id="tituloeditar"><h2>Editar Palavra</h2></div>
             <div class="label-float">
+                <input type="number" id="editarid" placeholder="Id" required>
+                <label for="editarpalavra"></label>
+            </div>
+            <div class="label-float">
                 <input type="text" id="editarpalavra" placeholder="Palavra" required>
                 <label for="editarpalavra"></label>
             </div>
@@ -61,16 +65,12 @@
             </div>
         </div>
     </form>
-    <form id="excluirPalavra" action="/palavra">
+    <form id="excluirPalavra" action="/palavra/:palavra">
         <div class="card">
             <div id="tituloexcluir"><h2>Excluir Palavra</h2></div>
             <div class="label-float">
                 <input type="text" id="excluirpalavra" placeholder="Palavra">
                 <label for="excluirpalavra"></label>
-            </div>
-            <div class="label-float">
-                <input type="text" id="excluirsignificado" placeholder="Significado">
-                <label for="excluirsignificado"></label>
             </div>
             <div>
                 <button class="justify-center" type="button" id="excluir">Excluir</button>
@@ -83,6 +83,12 @@
     <div class="home">
         <div class="palavras">
             <div class="palSig" id="card">
+                <div id="buttonEdEx">
+                    <div class="ExEd">
+                        <div class="editar"><button id="buttoneditar" onclick="toggleEditar(event)" aria-haspopup="true" aria-controls="menu" aria-expanded="false"><img src="edit.svg" alt="editar"></button></div>
+                        <div class="excluir"><button id="buttonexcluir" " onclick="toggleExcluir(event)" aria-haspopup="true" aria-controls="menu" aria-expanded="false"><img src="delete.svg" alt="excluir"></button></div>
+                    </div>
+                </div>
                 
             </div>
         </div>
@@ -91,5 +97,8 @@
         <span>Criado por <a href="#">Vladimir</a> | Todos os direitos reservados 2025</span>
     </footer>
     <script src="/script/POST-palavra.js"></script>
+    <script src="/script/GET-palavra.js"></script>
+    <script src="/script/DELETE-palavra.js"></script>
+    <script src="/script/PUT-palavra.js"></script>
 </body>
 </html>

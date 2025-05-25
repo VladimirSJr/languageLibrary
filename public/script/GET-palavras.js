@@ -12,14 +12,11 @@ function buscarRegistros(palavras){
     palavras.forEach(words => {
         const wordsHtml = `
         <div class = "palExEd">
-        <div id="${words.id}" value="${words.id}"></div>
+        <div id="${words.id}" value="${words.id}"><p>Id: ${words.id}</p></div>
         <div id="Showpalavra" value="${words.palavra}"><p>${words.palavra}</p></div>
-        <div class="ExEd">
-        <div class="editar"><button id="buttoneditar" onclick="toggleEditar(event)" aria-haspopup="true" aria-controls="menu" aria-expanded="false"><img src="edit.svg" alt="editar"></button></div>
-        <div class="excluir"><button id="buttonexcluir"onclick="toggleExcluir(event)" aria-haspopup="true" aria-controls="menu" aria-expanded="false"><img src="delete.svg" alt="excluir"></button></div>
         </div>
-        </div>
-        <div id="Showsignificado" value="${words.significado}"><p>${words.significado}</p></div>`
+        <div id="Showsignificado" value="${words.significado}"><p>${words.significado}</p></div>
+        `
 
         card.innerHTML = card.innerHTML + wordsHtml
     })        

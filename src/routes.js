@@ -8,10 +8,10 @@ router.get('/', (req,res)=> {
 })
 
 router.get('/palavras', selectPalavras)
-router.get('/palavra', selectPalavra)
+router.get('/palavra/:palavra', selectPalavra)
 router.post('/palavra', insertPalavra)
-router.put('/palavra', updatePalavra)
-router.delete('/palavra', deletePalavra)
+router.put('/palavra/', updatePalavra)
+router.delete('/palavra/:palavra', deletePalavra)
 
 
 

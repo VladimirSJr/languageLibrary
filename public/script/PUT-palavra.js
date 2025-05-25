@@ -8,7 +8,7 @@ editar.addEventListener('click', ()=>{
 })
 
 function getDadosFormEditar(){
-    const id = document.querySelector('#id')
+    const id = document.querySelector('#editarid');
     const Palavra = document.querySelector('#editarpalavra');
     const Significado = document.querySelector('#editarsignificado');
 
@@ -26,7 +26,7 @@ function getDadosFormEditar(){
 }
 
 async function enviarDadosApiAtualizar(palavra) {
-    const resposta = await fetch('http://localhost:3000/palavra', {
+    const resposta = await fetch('http://localhost:3000/palavra/', {
         method: 'PUT',
         headers: {
             Accept: 'application/json',
