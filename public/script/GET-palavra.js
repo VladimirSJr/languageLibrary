@@ -27,6 +27,7 @@ async function enviarDadosApiConsultar(palavra) {
         buscarRegistro(significado)
     }else{
         console.log('Erro ao consultar palavra!')
+        alert("A palavra não existe!")
     }
 }
 function buscarRegistro(palavras){

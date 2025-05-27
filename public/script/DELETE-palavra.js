@@ -28,7 +28,9 @@ async function enviarDadosApiExcluir(palavra) {
     if(resposta.status === 200){
         window.location.reload()
         console.log('Palavra excluída!')
+        alert("Palavra excluída com sucesso!")
     }else{
         console.log('Erro ao excluir palavra!')
+        alert("Palavra não existe!")
     }
 }

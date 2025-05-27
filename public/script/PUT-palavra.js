@@ -37,8 +37,10 @@ async function enviarDadosApiAtualizar(palavra) {
     if(resposta.status === 200){
         limparCampo();
         window.location.reload();
+        alert("Palavra editada com sucesso!")
     }else{
         console.log('Erro ao adicionar palavra!');
+        alert("A palavra já existe!")
     }
 }
 function limparCampo(){

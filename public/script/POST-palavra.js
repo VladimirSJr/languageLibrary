@@ -35,6 +35,7 @@ async function enviarDadosApiCriar(palavra) {
     if(resposta.status === 200){
         limparCampo()
         window.location.reload()
+        alert("Palavra criada com sucesso!")
     }else{
         console.log('Erro ao adicionar palavra!')
     }
