@@ -11,8 +11,7 @@
     
 }
 #buttoncriar,#buttonconsultar{
-    background-color: transparent;
-    border: .1rem solid black;
+    background-color: #efe9e1;
     margin-top: 0px;
 }
 .criar, .consultar{
@@ -29,20 +28,20 @@
     position: fixed;
     right: 45%;
     bottom: 40%;
-    border: .1rem solid black;
     border-radius: 4%;
+    color: #322d29;
 }
 .card{
     padding: 1rem;
     border-radius: 4%;
-    background-color: white;
+    background-color: #efe9e1;
 }
 .label-float input{
     width: 100%;
     padding: 5px;
     display: inline-block;
     border: 0;
-    border-bottom: 2px solid black;
+    border-bottom: 2px solid #322d29;
     background-color: transparent;
     outline: none;
     transition: all .3s ease-out;
@@ -55,7 +54,7 @@
     margin-bottom: 5%;
 }
 .label-float label{
-    color: black;
+    color: #322d29;
     pointer-events: none;
     position: absolute;
     top: 0;
@@ -64,7 +63,7 @@
     transition: all .3s ease-out;
 }
 .label-float input:focus{
-    border-bottom: 2px solid gray;
+    border-bottom: 2px solid #322d29;
 }
 .label-float input:focus + label{
     font-size: 13px;
@@ -72,7 +71,7 @@
 }
 button{
     background-color: transparent;
-    color: black;
+    color: #322d29;
     padding: .5rem;
     font-weight: bold;
     font-size: 12pt;
@@ -83,7 +82,7 @@ button{
     transition: all .4s ease-out;
 }
 button:hover{
-    background-color: gray;
+    background-color: #72383d;
 }
 .justify-center{
     display: flex;
@@ -100,7 +99,7 @@ button:hover{
     width: 100%;
     transition: all 0.3s ease;
     z-index: 999;
-    background-color: whitesmoke;
+    background-color: #d9d9d9;
 }
 h1{
     padding: 2rem 0;
@@ -109,12 +108,14 @@ h1{
     font-weight: 700;
     font-style: normal;
     font-size: 3rem;
+    color: #72383d;
 }
 
 .home{
     display: flex;
     padding: 8rem 5rem 0 1rem;
     min-height: 100vh;
+    background-color: #d9d9d9;
 }
 .palavras{
     display: flex;
@@ -138,6 +139,9 @@ h1{
     flex-direction: row;
     gap: 2rem;
     padding: 1rem 0;
+}
+.palExEd p{
+    color:#322d29
 }
 #Showpalavra{
     width: 70%;
@@ -166,12 +170,12 @@ h1{
     align-items: center;
 }
 #buttoneditar{
-    background-color: transparent;
+    background-color: #efe9e1;
     margin-top: 0px;
     width: 100%;
 }
 #buttonexcluir{
-    background-color: transparent;
+    background-color: #efe9e1;
     margin-top: 0px;
     width: 100%;
 }
@@ -208,6 +212,7 @@ footer{
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
+    background-color: #d9d9d9;
 }
 footer a{
     font-family: "Caveat", cursive;
