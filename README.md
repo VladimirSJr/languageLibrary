@@ -1,1 +1,2 @@
-É possível acessar o projeto através do link : https://vladimirsjr.github.io/languageLibrary/. Entretanto, até o momento, ainda falta desenvolver a conexão com o Banco de Dados para armazenar as informações.
+<h1>Language Library</h1>
+<P>A aplicação “Language Library” está disponível por meio do link, http://localhost:3000, mas para o servidor ficar disponível é necessário executar o código “npm run dev” no terminal dentro do repositório.</P>
